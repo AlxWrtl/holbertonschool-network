@@ -1,10 +1,24 @@
 #!/usr/bin/env bash
 
-# Check if the number of arguments is not equal to 1
+# This script pings an IP address 5 times.
+
+# Function to display usage instructions
+function print_usage() {
+    echo "Usage: $0 {IP_ADDRESS}"
+}
+
+# Main script execution starts here
+
+# Check if exactly one argument is provided
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 {IP_ADDRESS}" # Display usage message
-    exit 1 # Exit with an error status code
+    # If not, display usage instructions and exit with an error status
+    print_usage
+    exit 1
 fi
 
-# Ping the provided IP address 5 times
-ping -c 5 $1
+# Store the first argument (IP address) in a variable for better readability
+ip_address=$1
+
+# Use the ping command to send 5 ICMP echo requests to the IP address
+ping -c 5 $ip_address
+fi

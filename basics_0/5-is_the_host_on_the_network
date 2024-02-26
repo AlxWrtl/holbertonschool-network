@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+# Check if the number of arguments is not equal to 1
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
-    exit 1
+    echo "Usage: $0 {IP_ADDRESS}" # Display usage message
+    exit 1 # Exit with an error status code
 fi
 
+# Ping the provided IP address 5 times
 ping -c 5 $1

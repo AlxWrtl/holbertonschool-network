@@ -1,24 +1,9 @@
 #!/usr/bin/env bash
+# Write a Bash script that pings an IP address passed as an argument
 
-# This script pings an IP address 5 times.
-
-# Function to display usage instructions
-function print_usage() {
-    echo "Usage: $0 {IP_ADDRESS}"
-}
-
-# Main script execution starts here
-
-# Check if exactly one argument is provided
-if [ "$#" -ne 1 ]; then
-    # If not, display usage instructions and exit with an error status
-    print_usage
-    exit 1
-fi
-
-# Store the first argument (IP address) in a variable for better readability
-ip_address=$1
-
-# Use the ping command to send 5 ICMP echo requests to the IP address
-ping -c 5 $ip_address
+if [[ -z "$1" ]]
+then 
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+    ping -c 5 "$1"
 fi

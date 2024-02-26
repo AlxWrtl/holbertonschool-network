@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Active Internet connections (only servers)"
+ss -tulnp

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Bash script to display active Internet connections, focusing on servers.
 
 #This script uses the ss command to list socket statistics, specifically
@@ -6,5 +6,4 @@
 #and UNIX domain sockets (-x), including processes (-p) listening on these
 #sockets. It's particularly useful for network diagnostics and monitoring.
 
-echo "Active Internet connections (only servers)"
-ss -tulnp
+netstat -l --program

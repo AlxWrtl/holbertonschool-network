@@ -1,4 +1,10 @@
 #!/bin/bash
+#Bash script to display active Internet connections, focusing on servers.
+
+#This script uses the ss command to list socket statistics, specifically
+#filtering for listening sockets (-l) associated with TCP (-t), UDP (-u),
+#and UNIX domain sockets (-x), including processes (-p) listening on these
+#sockets. It's particularly useful for network diagnostics and monitoring.
 
 echo "Active Internet connections (only servers)"
 ss -tulnp
